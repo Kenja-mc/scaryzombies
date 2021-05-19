@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "scaryzombies",
+  "version": "${version}",
+
+  "name": "ScaryZombies",
+  "description": "A simple Fabric mod that aims to make zombies scarier. Inspired by Shotbow's MineZ plugin.",
+  "authors": [
+    "Kenja-mc"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Kenja-mc/scaryzombies/",
+    "sources": "https://github.com/Kenja-mc/scaryzombies/"
+  },
+
+  "license": "UNLICENSE",
+  "icon": "assets/scaryzombies/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.scaryzombies.ScaryZombiesInit"
+    ]
+  },
+  "mixins": [
+
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
