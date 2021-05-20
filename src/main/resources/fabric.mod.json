@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.scaryzombies.ScaryZombiesInit"
+    ],
+    "client": [
+      "net.scaryzombies.EntityTestingClient"
     ]
   },
   "mixins": [
