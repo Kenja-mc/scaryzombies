@@ -1,13 +1,12 @@
-package net.scaryzombies.client.renderer;
+package net.scaryzombies.Client.Renderer;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.render.entity.BipedEntityRenderer;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
 import net.minecraft.client.render.entity.model.ZombieEntityModel;
-import net.scaryzombies.entity.ScaryZombieEntity;
+import net.scaryzombies.Entity.ScaryZombieEntity;
 import net.minecraft.util.Identifier;
 
 
@@ -22,7 +21,7 @@ public class ScaryZombieRenderer extends MobEntityRenderer<ScaryZombieEntity, Zo
         );
     }
 
-    private static final Identifier SKIN = new Identifier("minecraft:textures/entity/zombie/zombie.png");
+    private static final Identifier SKIN = new Identifier("minecraft:textures/Entity/zombie/zombie.png");
 
     @Override
     public Identifier getTexture(ScaryZombieEntity sze) {

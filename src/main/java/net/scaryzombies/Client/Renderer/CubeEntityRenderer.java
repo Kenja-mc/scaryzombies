@@ -1,13 +1,13 @@
-package net.scaryzombies.client.renderer;
+package net.scaryzombies.Client.Renderer;
 
-import net.scaryzombies.client.model.CubeEntityModel;
-import net.scaryzombies.entity.CubeEntity;
+import net.scaryzombies.Client.Model.CubeEntityModel;
+import net.scaryzombies.Entity.CubeEntity;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 
 /*
- * A renderer is used to provide an entity model, shadow size, and texture.
+ * A Renderer is used to provide an Entity Model, shadow size, and texture.
  */
 public class CubeEntityRenderer extends MobEntityRenderer<CubeEntity, CubeEntityModel> {
 
@@ -17,7 +17,7 @@ public class CubeEntityRenderer extends MobEntityRenderer<CubeEntity, CubeEntity
 
     @Override
     public Identifier getTexture(CubeEntity entity) {
-        return new Identifier("scaryzombies", "textures/entity/cube/cube.png");
+        return new Identifier("scaryzombies", "textures/Entity/cube/cube.png");
     }
 
 }

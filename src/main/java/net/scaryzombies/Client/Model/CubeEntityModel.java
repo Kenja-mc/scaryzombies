@@ -1,6 +1,6 @@
-package net.scaryzombies.client.model;
+package net.scaryzombies.Client.Model;
 
-import net.scaryzombies.entity.CubeEntity;
+import net.scaryzombies.Entity.CubeEntity;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
@@ -24,7 +24,7 @@ public class CubeEntityModel extends EntityModel<CubeEntity> {
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-        // translate model down
+        // translate Model down
         matrices.translate(0, 1.125, 0);
 
         // render cube

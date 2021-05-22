@@ -1,4 +1,4 @@
-package net.scaryzombies.entity;
+package net.scaryzombies.Entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.PathAwareEntity;

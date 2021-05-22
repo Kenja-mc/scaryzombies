@@ -1,10 +1,10 @@
-//package net.scaryzombies.client.model;
+//package net.scaryzombies.Client.Model;
 //
-//import net.minecraft.client.model.ModelPart;
-//import net.minecraft.client.render.VertexConsumer;
-//import net.minecraft.client.render.entity.model.EntityModel;
-//import net.minecraft.client.util.math.MatrixStack;
-//import net.scaryzombies.entity.ScaryZombieEntity;
+//import net.minecraft.Client.Model.ModelPart;
+//import net.minecraft.Client.render.VertexConsumer;
+//import net.minecraft.Client.render.Entity.Model.EntityModel;
+//import net.minecraft.Client.util.math.MatrixStack;
+//import net.scaryzombies.Entity.ScaryZombieEntity;
 //
 //public class ScaryZombieEntityModel extends EntityModel<ScaryZombieEntity> {
 //    private final ModelPart base;
@@ -15,13 +15,13 @@
 //    }
 //
 //    @Override
-//    public void setAngles(ScaryZombieEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+//    public void setAngles(ScaryZombieEntity Entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 //
 //    }
 //
 //    @Override
 //    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-//        // translate model down
+//        // translate Model down
 //        // matrices.translate(0, 1.125, 0);
 //
 //        // render cube
