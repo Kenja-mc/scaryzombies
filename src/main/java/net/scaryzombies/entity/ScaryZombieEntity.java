@@ -1,4 +1,4 @@
-package net.scaryzombies.common.entity;
+package net.scaryzombies.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

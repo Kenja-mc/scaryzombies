@@ -1,5 +1,6 @@
 package net.scaryzombies;
 
+import net.minecraft.entity.Entity;
 import net.scaryzombies.entity.CubeEntity;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -12,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.scaryzombies.entity.ScaryZombieEntity;
 
 public class ScaryZombiesInit implements ModInitializer {
 
@@ -29,6 +31,12 @@ public class ScaryZombiesInit implements ModInitializer {
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
 
+    public static final EntityType<ScaryZombieEntity> SCARY_ZOMBIE = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("scaryzombies", "scary_zombie"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, ScaryZombieEntity::new).dimensions(EntityDimensions.fixed(0.6f, 1.95f)).build()
+    );
+
     @Override
     public void onInitialize() {
         System.out.println("Yo.");
@@ -44,5 +52,7 @@ public class ScaryZombiesInit implements ModInitializer {
          * Most vanilla entities have a static method (eg. ZombieEntity#createZombieAttributes) for initializing their attributes.
          */
         FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
+
+        FabricDefaultAttributeRegistry.register(SCARY_ZOMBIE, ScaryZombieEntity.createScaryZombieEntityAttributes());
     }
 }
