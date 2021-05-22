@@ -1,4 +1,4 @@
-package net.scaryzombies;
+package net.scaryzombies.Item;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

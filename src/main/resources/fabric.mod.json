@@ -22,7 +22,7 @@
       "net.scaryzombies.ScaryZombiesInit"
     ],
     "client": [
-      "net.scaryzombies.Renderinit"
+      "net.scaryzombies.ClientInit"
     ]
   },
   "mixins": [
