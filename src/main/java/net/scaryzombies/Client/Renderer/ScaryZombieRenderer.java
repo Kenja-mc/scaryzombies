@@ -21,7 +21,7 @@ public class ScaryZombieRenderer extends MobEntityRenderer<ScaryZombieEntity, Zo
         );
     }
 
-    private static final Identifier SKIN = new Identifier("minecraft:textures/Entity/zombie/zombie.png");
+    private static final Identifier SKIN = new Identifier("textures/entity/scaryzombie/zombie.png");
 
     @Override
     public Identifier getTexture(ScaryZombieEntity sze) {

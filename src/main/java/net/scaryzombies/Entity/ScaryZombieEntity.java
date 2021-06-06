@@ -11,19 +11,23 @@ public class ScaryZombieEntity extends ZombieEntity {
 
     public ScaryZombieEntity(EntityType<? extends ZombieEntity> entityType, World world){
         super(entityType, world);
-        this.experiencePoints = 10;
+        this.experiencePoints = 0;
     }
 
     public static DefaultAttributeContainer.Builder createScaryZombieEntityAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 20)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.15)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1.5)
-                .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.0)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 40)
-                .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.5)
-                .add(EntityAttributes.GENERIC_ARMOR, 0.0)
-                .add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS, 0.0);
+            .add(EntityAttributes.GENERIC_MAX_HEALTH, 7.0 + 7.0)
+            .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.387)
+            .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64)
+
+//            .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1.5)
+//            .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.0)
+//            .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.5)
+//            .add(EntityAttributes.GENERIC_ARMOR, 0.0)
+//            .add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS, 0.0)
+
+            ;
+
     }
 
     @Override
