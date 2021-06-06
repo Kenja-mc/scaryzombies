@@ -5,7 +5,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
-import net.scaryzombies.Client.Renderer.ScaryZombieRenderer;
+import net.scaryzombies.Entity.ScaryZombieRenderer;
 
 @Environment(EnvType.CLIENT)
 public class ClientInit implements ClientModInitializer {

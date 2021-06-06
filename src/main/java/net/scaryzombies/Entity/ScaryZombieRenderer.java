@@ -1,4 +1,4 @@
-package net.scaryzombies.Client.Renderer;
+package net.scaryzombies.Entity;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
