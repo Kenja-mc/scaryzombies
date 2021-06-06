@@ -19,10 +19,9 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.scaryzombies.ScaryZombiesInit"
+      "net.scaryzombies.ScaryZombiesModInit"
     ],
     "client": [
-      "net.scaryzombies.ClientInit"
     ]
   },
   "mixins": [
