@@ -1,30 +1,19 @@
 package net.scaryzombies.mobs.ScaryZombie;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
-import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
-import net.minecraft.client.render.entity.model.ZombieEntityModel;
+import net.minecraft.client.render.entity.*;
 import net.minecraft.util.Identifier;
+import net.scaryzombies.ClientInit;
 
+public class ScaryZombieRenderer extends MobEntityRenderer<ScaryZombieEntity, ScaryZombieModel<ScaryZombieEntity>> {
 
-@Environment(EnvType.CLIENT)
-public class ScaryZombieRenderer extends MobEntityRenderer<ScaryZombieEntity, ZombieEntityModel<ScaryZombieEntity>> {
-
-    public ScaryZombieRenderer(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new ZombieEntityModel<>(0.0f, false), 1);
-        this.addFeature(
-                new ArmorFeatureRenderer<>(this, new ZombieEntityModel<>(0.5f, true),
-                        new ZombieEntityModel<>(1.0f, true))
-        );
+    public ScaryZombieRenderer(EntityRendererFactory.Context ctx) {
+        super(ctx, new ScaryZombieModel<>(ctx.getPart(ClientInit.SCARY_ZOMBIE_ML)), 1);
     }
 
-    private static final Identifier SKIN = new Identifier("textures/entity/scaryzombie/zombie.png");
-
     @Override
-    public Identifier getTexture(ScaryZombieEntity sze) {
-        return SKIN;
+    public Identifier getTexture(ScaryZombieEntity entity) {
+        return new Identifier("scaryzombies:textures/mobs/scaryzombie/zombie.png");
     }
 
 }
+
