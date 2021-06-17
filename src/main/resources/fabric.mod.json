@@ -19,10 +19,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.scaryzombies.ScaryZombiesModInit"
+      "net.scaryzombies.ScaryZombiesMod"
     ],
     "client": [
-      "net.scaryzombies.ClientInit"
+      "net.scaryzombies.ScaryZombiesClient"
     ]
   },
   "mixins": [
@@ -30,9 +30,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.11.6",
     "fabric": "*",
-    "minecraft": "1.17.x",
+    "minecraft": "1.17",
     "java": ">=16"
   },
   "suggests": {
