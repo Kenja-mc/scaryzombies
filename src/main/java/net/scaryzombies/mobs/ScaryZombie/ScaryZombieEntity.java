@@ -1,78 +1,58 @@
 package net.scaryzombies.mobs.ScaryZombie;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.entity.ai.goal.RevengeGoal;
+import net.minecraft.entity.ai.goal.WanderAroundGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.ZombieEntity;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
 public class ScaryZombieEntity extends ZombieEntity {
-    //   Registry
-    public static final EntityType<ScaryZombieEntity> ENTITY =
-            Registry.register(Registry.ENTITY_TYPE, new Identifier("scaryzombies", "scary_zombie"),
-                    FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ScaryZombieEntity::new)
-                            .dimensions(EntityDimensions.fixed(0.6f, 1.95f))
-                            .trackRangeBlocks(64)
-                            .forceTrackedVelocityUpdates(true)
-                            .trackedUpdateRate(3)
-                            .build()
-            );
+    public static final Identifier SZE_MOB_ID = new Identifier("scaryzombies", "scary_zombie");
 
-
-    public ScaryZombieEntity(EntityType<? extends ZombieEntity> entityType, World world) {
+    public ScaryZombieEntity(EntityType<? extends ScaryZombieEntity> entityType, World world) {
         super(entityType, world);
-        this.setAiDisabled(false);
-        this.experiencePoints = 5;
     }
 
-    public static void init() {
-        FabricDefaultAttributeRegistry.register(ENTITY, ScaryZombieEntity.createScaryZombieEntityAttributes());
-//        Register spawn egg
-        Registry.register(Registry.ITEM, new Identifier("scaryzombies", "scary_zombie_spawn_egg"),
-                new SpawnEggItem(ENTITY, -1, -1, new FabricItemSettings().group(ItemGroup.MISC)));
-    }
-
-    public static DefaultAttributeContainer.Builder createScaryZombieEntityAttributes() {
+    public static DefaultAttributeContainer.Builder createZombieAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 7.0 + 7.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.387)
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0d)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.387d)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1.5d)
+                .add(EntityAttributes.GENERIC_ARMOR, 0.0d)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0d)
+                .add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS)
 
-                // TODO: Define other attributes
-                // .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1.5)
+                // TODO: Balance knockback
                 // .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.0)
                 // .add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.5)
-                // .add(EntityAttributes.GENERIC_ARMOR, 0.0)
-                // .add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS, 0.0)
                 ;
     }
 
-    //    TODO Define smarter AI
+    /*
+    TODO Define smarter AI using Warden virbations
     @Override
     protected void initGoals() {
         super.initGoals();
         this.goalSelector.add(1, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.add(2, new WanderAroundGoal(this, 1));
         this.targetSelector.add(3, new RevengeGoal(this));
-    // this.goalSelector.add(4, new LookAroundGoal(this));  This can be performance heavy
-    // this.goalSelector.add(5, new SwimGoal(this));        Removing Swim goals for now.
+        // this.goalSelector.add(4, new LookAroundGoal(this));  This can be performance heavy
+        // this.goalSelector.add(5, new SwimGoal(this));        Removing Swim goals for now.
     }
+     */
 
     @Override
-    public boolean isConvertingInWater() {
-        // TODO: Make a Drowned Variant
+    protected boolean canConvertInWater() {
+        // TODO: Make a Drowned Variant?
         return false;
     }
 
@@ -84,6 +64,11 @@ public class ScaryZombieEntity extends ZombieEntity {
     @Override
     public boolean isBaby() {
         return false;
+    }
+
+    @Override
+    protected ItemStack getSkull() {
+        return ItemStack.EMPTY;
     }
 
 /*
@@ -117,26 +102,26 @@ public class ScaryZombieEntity extends ZombieEntity {
     }
 
     TODO: Define reinforcement spawning
+*/
 
-    TODO: Define new sound effects?
+    //TODO: Custom sound assets
     @Override
     protected SoundEvent getAmbientSound() {
-        return Soundinit.AMBIENTTANKEVENT;
+        return SoundEvents.ENTITY_HUSK_AMBIENT;
     }
 
     @Override
-    protected SoundEvent getHurtSound(DamageSource damageSource_1) {
-        return Soundinit.HURTTANKEVENT;
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.ENTITY_HUSK_HURT;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return Soundinit.DEATHTANKEVENT;
+        return SoundEvents.ENTITY_HUSK_DEATH;
     }
 
+    @Override
     protected SoundEvent getStepSound() {
-        return Soundinit.STEPTANKEVENT;
+        return SoundEvents.ENTITY_HUSK_STEP;
     }
-*/
-
 }
