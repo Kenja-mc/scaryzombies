@@ -4,8 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
-import net.scaryzombies.init.EntityModelLayersInit;
-import net.scaryzombies.mobs.ScaryZombie.ScaryZombieRenderer;
+import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieRenderer;
 
 @Environment(EnvType.CLIENT)
 public class ScaryZombiesClient implements ClientModInitializer {
@@ -14,7 +13,7 @@ public class ScaryZombiesClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         //Register Model
-        EntityModelLayersInit.init();
+        ScaryZombieRenderer.init();
         //Register Renderer
         EntityRendererRegistry.INSTANCE.register(ScaryZombiesMod.SZ_ENTITY, ScaryZombieRenderer::new);
     }

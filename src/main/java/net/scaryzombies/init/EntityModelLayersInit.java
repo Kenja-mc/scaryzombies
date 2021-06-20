@@ -1,3 +1,4 @@
+/*
 package net.scaryzombies.init;
 
 
@@ -6,7 +7,7 @@ import net.minecraft.client.model.Dilation;
 import net.minecraft.client.model.TexturedModelData;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.ZombieEntityModel;
-import net.scaryzombies.mobs.ScaryZombie.ScaryZombieEntity;
+import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieEntity;
 
 @SuppressWarnings("deprecation")
 public class EntityModelLayersInit {
@@ -20,3 +21,4 @@ public class EntityModelLayersInit {
 
     }
 }
+*/
