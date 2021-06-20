@@ -11,7 +11,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.scaryzombies.mobs.ScaryZombie.ScaryZombieEntity;
+import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
