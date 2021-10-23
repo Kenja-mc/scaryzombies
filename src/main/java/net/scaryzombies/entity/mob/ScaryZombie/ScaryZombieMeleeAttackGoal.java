@@ -1,5 +1,5 @@
-/*
-package net.scaryzombies.mobs.ScaryZombie;
+
+package net.scaryzombies.entity.mob.ScaryZombie;
 
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
@@ -35,5 +35,3 @@ public class ScaryZombieMeleeAttackGoal extends MeleeAttackGoal {
 
     }
 }
-
- */
