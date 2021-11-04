@@ -11,6 +11,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,17 +19,24 @@ import org.apache.logging.log4j.Logger;
 public class ScaryZombiesMod implements ModInitializer {
     public static final String MOD_ID = "scaryzombies";
 
+    // Configs
+    public static ConfiguredFeatures.Configs configs = null;
+
+    // ItemGroup
+
+    // Tags
+
     private static final Logger LOGGER = LogManager.getLogger("ScaryZombies");
 
-    public static final EntityType<ScaryZombieEntity> SZ_ENTITY =
-            Registry.register(Registry.ENTITY_TYPE, ScaryZombieEntity.SZE_MOB_ID,
-                    FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ScaryZombieEntity::new)
-                            .dimensions(EntityDimensions.fixed(0.6f, 1.95f))
-                            .trackRangeBlocks(64)
-                            .forceTrackedVelocityUpdates(true)
-                            .trackedUpdateRate(3)
-                            .build()
-            );
+    public static final EntityType<ScaryZombieEntity> SZ_ENTITY = Registry.register(
+            Registry.ENTITY_TYPE, ScaryZombieEntity.SZE_MOB_ID,
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ScaryZombieEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.6f, 1.95f))
+                    .trackRangeBlocks(64)
+                    .forceTrackedVelocityUpdates(true)
+                    .trackedUpdateRate(3)
+                    .build()
+    );
 
 
     @Override
