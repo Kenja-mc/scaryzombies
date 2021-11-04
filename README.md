@@ -15,3 +15,4 @@ I'm making this mod for my custom modpack.
   - Improve zombie "charge state" (moves faster when detecting a player)
   - Calls nearby zombies to swarm
   - Implement 1.18 Sculk methods to have zombies detect "noise"
+- Zombie Variants (Maybe)
