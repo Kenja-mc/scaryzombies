@@ -22,7 +22,7 @@ public class ScaryZombieEntity extends ZombieEntity {
     public static DefaultAttributeContainer.Builder createZombieAttributes() {
         return HostileEntity.createHostileAttributes()
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 64.0d)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.387d)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.35f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1.5d)
                 .add(EntityAttributes.GENERIC_ARMOR, 0.0d)
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 14.0d)
