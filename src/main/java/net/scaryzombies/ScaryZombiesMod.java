@@ -36,7 +36,6 @@ public class ScaryZombiesMod implements ModInitializer {
                     .build()
     );
 
-
     @Override
     public void onInitialize() {
         System.out.println("Initializing ScaryZombies...");
