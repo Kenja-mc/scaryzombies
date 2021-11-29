@@ -15,7 +15,6 @@ public class ScaryZombiesClient implements ClientModInitializer {
         //Register Model
         ScaryZombieRenderer.init();
         //Register Renderer
-        // EntityRendererRegistry.INSTANCE.register(ScaryZombiesMod.SZ_ENTITY, ScaryZombieRenderer::new);
         EntityRendererRegistry.register(ScaryZombiesMod.SZ_ENTITY, ScaryZombieRenderer::new);
     }
 
