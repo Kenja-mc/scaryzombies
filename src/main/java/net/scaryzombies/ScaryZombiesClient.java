@@ -8,12 +8,9 @@ import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieRenderer;
 
 @Environment(EnvType.CLIENT)
 public class ScaryZombiesClient implements ClientModInitializer {
-//    public static final EntityModelLayer SZE_MODEL_LAYER = new EntityModelLayer(ScaryZombiesMod.SZE_MOB_ID, "main");
 
     @Override
     public void onInitializeClient() {
-        //Register Model
-        ScaryZombieRenderer.init();
         //Register Renderer
         EntityRendererRegistry.register(ScaryZombiesMod.SZ_ENTITY, ScaryZombieRenderer::new);
     }
