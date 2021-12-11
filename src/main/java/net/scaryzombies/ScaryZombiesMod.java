@@ -11,7 +11,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieEntity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +19,6 @@ public class ScaryZombiesMod implements ModInitializer {
     public static final String MOD_ID = "scaryzombies";
 
     // Configs
-    public static ConfiguredFeatures.Configs configs = null;
 
     // ItemGroup
 
@@ -37,7 +35,6 @@ public class ScaryZombiesMod implements ModInitializer {
                     .trackedUpdateRate(3)
                     .build()
     );
-
 
     @Override
     public void onInitialize() {

@@ -11,9 +11,7 @@ import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
 public class ScaryZombieRenderer extends ZombieEntityRenderer {
-//    private static final Identifier TEXTURE = new Identifier("scaryzombies", "textures/mobs/zombie.png");
     private static final Identifier TEXTURE = new Identifier("minecraft", "textures/entity/zombie/zombie.png");
-//    public static EntityModelLayer SZE_MODEL_LAYER = new EntityModelLayer(ScaryZombieEntity.SZE_MOB_ID, "main");
 
     public ScaryZombieRenderer(Context context) {
         // Just yoinking vanilla EMLs for now
