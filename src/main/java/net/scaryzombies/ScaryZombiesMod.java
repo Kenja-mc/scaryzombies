@@ -16,12 +16,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.Heightmap;
 import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieEntity;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class ScaryZombiesMod implements ModInitializer {
     public static final String MOD_ID = "scaryzombies";
-    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
     public static final EntityType<ScaryZombieEntity> SZ_ENTITY = Registry.register(
             Registry.ENTITY_TYPE, ScaryZombieEntity.SZE_MOB_ID,
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ScaryZombieEntity::new)
@@ -36,7 +33,6 @@ public class ScaryZombiesMod implements ModInitializer {
     public void onInitialize() {
         // System.out.println("Initializing ScaryZombies...");
         //Initializations
-        LOGGER.info("Initializing ScaryZombies mod.");
 
         // Register ScaryZombieEntity
         FabricDefaultAttributeRegistry.register(SZ_ENTITY, ScaryZombieEntity.createZombieAttributes());
