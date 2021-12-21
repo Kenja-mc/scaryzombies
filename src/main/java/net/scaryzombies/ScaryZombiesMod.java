@@ -1,5 +1,9 @@
 package net.scaryzombies;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.ConfigHolder;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -15,10 +19,12 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.Heightmap;
+import net.scaryzombies.config.ScaryZombiesConfig;
 import net.scaryzombies.entity.mob.ScaryZombie.ScaryZombieEntity;
 
 public class ScaryZombiesMod implements ModInitializer {
     public static final String MOD_ID = "scaryzombies";
+    public static ScaryZombiesConfig CONFIG = new ScaryZombiesConfig();
     public static final EntityType<ScaryZombieEntity> SZ_ENTITY = Registry.register(
             Registry.ENTITY_TYPE, ScaryZombieEntity.SZE_MOB_ID,
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ScaryZombieEntity::new)
@@ -33,6 +39,9 @@ public class ScaryZombiesMod implements ModInitializer {
     public void onInitialize() {
         // System.out.println("Initializing ScaryZombies...");
         //Initializations
+        // Init Cloth Config
+        AutoConfig.register(ScaryZombiesConfig.class, Toml4jConfigSerializer::new);
+        CONFIG = AutoConfig.getConfigHolder(ScaryZombiesConfig.class).getConfig();
 
         // Register ScaryZombieEntity
         FabricDefaultAttributeRegistry.register(SZ_ENTITY, ScaryZombieEntity.createZombieAttributes());
