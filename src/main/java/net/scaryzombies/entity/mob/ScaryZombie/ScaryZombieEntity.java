@@ -55,8 +55,7 @@ public class ScaryZombieEntity extends ZombieEntity {
         // SZs dont break doors
         // this.goalSelector.add(6, new MoveThroughVillageGoal(this, 1.0D, true, 4, this::canBreakDoors));
         this.goalSelector.add(7, new WanderAroundFarGoal(this, 1.0D));
-        // SZs don't look around. Also helps performance I think.
-        // this.goalSelector.add(8, new LookAroundGoal(this));
+        this.goalSelector.add(8, new LookAroundGoal(this));
         this.goalSelector.add(8, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
 
         // SZs should alert friends like pigmen?
@@ -72,55 +71,10 @@ public class ScaryZombieEntity extends ZombieEntity {
         return this.getAttributeValue(EntityAttributes.GENERIC_FOLLOW_RANGE);
     }
 
-
     // I figured out the bug with follow range I think.
     // isInWalkTargetRange does not properly update to match, as the range is still dependent on
     // squared distance.
     // https://bugs.mojang.com/browse/MC-145656
-    // TODO: Check if this fixes bug with follow distance?
-    /*
-    @Override
-    public boolean isInWalkTargetRange(BlockPos pos) {
-        LOGGER.info("Checking if target is in range.");
-        LOGGER.info("\tTarget position range: " + this.getPositionTargetRange());
-        LOGGER.info("\tTarget position squared distance: " + this.getPositionTarget().getSquaredDistance(pos));
-        LOGGER.info("\tTarget within 70 blocks?: " + this.getPositionTarget().isWithinDistance(this.getPos(), 70.0D));
-        LOGGER.info("\tTarget within 35 blocks?: " + this.getPositionTarget().isWithinDistance(this.getPos(), 35.0D));
-        LOGGER.info("\tTarget within 17.5 blocks?: " + this.getPositionTarget().isWithinDistance(this.getPos(), 17.5D));
-
-        if (this.getTarget() == null) {
-            return false;
-        } else if (this.getPositionTargetRange() == -1.0F) {
-            return true;
-        } else if (this.getTarget().isPlayer() && this.getTarget().isPartOfGame()) {
-            double targetDist = this.getPositionTarget().getSquaredDistance(pos);
-            boolean isSwimming = this.getTarget().isInSwimmingPose();
-            boolean isSneaking = this.getTarget().isInSneakingPose();
-            boolean isStanding = this.getTarget().getPose() == EntityPose.STANDING;
-            boolean isSprinting = this.getTarget().isSprinting();
-
-            if (isSwimming && this.getPositionTarget().isWithinDistance(this.getPos(), this.getFollowRange() * 0.1)) {
-                LOGGER.info("Found swimming player: " + this.getPositionTargetRange());
-                return true;
-            } else if (isSneaking && this.getPositionTarget().isWithinDistance(this.getPos(), this.getFollowRange() * 0.5)) {
-                LOGGER.info("Found sneaking player: " + this.getPositionTargetRange());
-                return true;
-            } else if (isStanding && this.getPositionTarget().isWithinDistance(this.getPos(), this.getFollowRange())) {
-                LOGGER.info("Found standing player: " + this.getPositionTargetRange());
-                return true;
-            } else if (isSprinting && this.getPositionTarget().isWithinDistance(this.getPos(), this.getFollowRange() * 2.0)) {
-                LOGGER.info("Found sprinting player: " + this.getPositionTargetRange());
-                return true;
-            } else {
-                return false;
-            }
-        } else if (!this.getTarget().isPlayer()){
-            return this.getPositionTarget().getSquaredDistance(pos) < (double)(this.getPositionTargetRange() * this.getPositionTargetRange());
-        } else {
-            return false;
-        }
-    }
-    */
 
     @Override
     public boolean isBaby() {
